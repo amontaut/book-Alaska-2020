@@ -1,0 +1,1590 @@
+/*
+/*
+//////////////   COMMUN à plusieurs pages (1/10)
+/*
+*/
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+header,
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: black;
+    height: auto;
+    min-height: 10%;
+}
+
+footer {
+    border-top: 2px solid white;
+}
+
+header a,
+footer a,
+footer p {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Unica One', sans-serif, monospace;
+}
+
+p,
+label {
+    font-family: 'Raleway', sans-serif, monospace;
+}
+
+h2 {
+    font-family: 'Amatic SC', sans-serif, monospace;
+}
+
+button {
+    font-family: 'Unica One', sans-serif, monospace;
+    border: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.borders {
+    border-right: #ACC7AC 5px solid;
+    border-left: #ACC7AC 5px solid;
+}
+
+/* bouton de connexion et deconnexion*/
+header button {
+    margin: 1%;
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.acces_admin_page,
+.button_deconnexion,
+.check_new_pwd,
+.button_change_pwd,
+.homeco {
+    display: none;
+}
+
+.menu_burger,
+.close_menu_burger {
+    display: none;
+    width: 60px;
+    margin: 5%;
+    color: white;
+}
+
+.menu_classique {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.bar {
+    width: 90%;
+    border: 3px solid white;
+    border-radius: 5px;
+}
+
+.close_menu_burger {
+    display: none;
+    margin: 0;
+    text-align: center;
+}
+
+.fa-times {
+    font-size: 2em;
+}
+
+
+
+/*////////// CHANGEMENT DU MDP 
+
+
+/*
+/* affichage du cadre pour changer le mdp 
+*/
+.lightbox {
+    z-index: 99;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox:target {
+    display: table;
+}
+
+.lightbox figure {
+    display: table-cell;
+    padding: 2%;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.lightbox figure figcaption {
+    display: block;
+    margin: auto;
+    padding: 8px;
+    background-color: #ACC7AC;
+    height: auto;
+    position: relative;
+    overflow: auto;
+    border-radius: 10px;
+    text-align: justify;
+    font-size: 1em;
+}
+
+div.lightbox figure .closemsg {
+    display: block;
+    margin: auto;
+    height: 0;
+    overflow: visible;
+    text-align: right;
+    z-index: 2;
+    cursor: pointer;
+}
+
+div.lightbox figure .closemsg,
+div.lightbox figure figcaption {
+    width: 50%;
+}
+
+.closemsg::after {
+    content: "\00D7";
+    display: inline-block;
+    position: relative;
+    right: -20px;
+    top: -10px;
+    z-index: 3;
+    color: #ffffff;
+    border: 1px #ffffff solid;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+    background-color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closemsg::before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.85;
+}
+
+/*
+/* fin affichage du cadre pour changer le mdp 
+*/
+
+/*formulaire */
+.change_pwd {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    text-align: center;
+    padding-top: 5%;
+    font-size: 1.2em;
+    background-image: url(images/login%20originale%20-%20copie.jpg);
+    background-size: cover;
+}
+
+.change_pwd div {
+    margin: 2%;
+}
+
+.submit_change_pwd {
+    width: 90%;
+    margin: auto;
+    border: none;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Unica One', sans-serif, monospace;
+    margin: 2%;
+}
+
+
+/*////////// FIN CHANGEMENT DU MDP */
+
+
+
+.lightbox2 {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox2:target {
+    display: table;
+}
+
+.lightbox2 figure {
+    display: table-cell;
+    padding: 2%;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.lightbox2 figure figcaption {
+    display: block;
+    margin: auto;
+    padding: 8px;
+    background-color: #ACC7AC;
+    height: auto;
+    position: relative;
+    overflow: auto;
+    border-radius: 10px;
+    text-align: justify;
+    font-size: 1em;
+}
+
+div.lightbox2 figure .closemsg {
+    display: block;
+    margin: auto;
+    height: 0;
+    overflow: visible;
+    text-align: right;
+    z-index: 2;
+    cursor: pointer;
+}
+
+div.lightbox2 figure .closemsg,
+div.lightbox2 figure figcaption {
+    width: 50%;
+}
+
+.closemsg::after {
+    content: "\00D7";
+    display: inline-block;
+    position: relative;
+    right: -20px;
+    top: -10px;
+    z-index: 3;
+    color: #ffffff;
+    border: 1px #ffffff solid;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+    background-color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closemsg::before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.85;
+}
+
+
+
+
+
+
+
+
+.display_block {
+    display: block;
+}
+
+.display_none {
+    display: none;
+}
+
+
+/*formulaire de connexion*/
+.login_area {
+    text-align: center;
+    display: none;
+    padding-top: 5%;
+    font-size: 1.2em;
+    background-image: url(images/login%20originale%20-%20copie.jpg);
+    background-size: cover;
+}
+
+.login_area form {
+    margin: 0;
+}
+
+/*champs d'entrée username et pwd*/
+#username,
+#pwd,
+#confirm_email {
+    border: none;
+    background: none;
+    border-bottom: 1px solid black;
+    margin: 1%;
+    font-size: 1.2em;
+    width: 90%;
+}
+
+#username:focus,
+#pwd:focus,
+#confirm_email:focus {
+    background: white;
+}
+
+/*bouton se connecter*/
+.co,
+.submit_pwd_forgotten {
+    background: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3% 4%;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-family: 'Unica One', sans-serif, monospace;
+    margin-bottom: 2%;
+}
+
+/*bouton mdp oublié*/
+.button_mdp_oublie {
+    background: #ACC7AC;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    /*    color: white;*/
+    padding: 0.3% 4%;
+    cursor: pointer;
+    margin-bottom: 1.6%;
+    font-family: 'Unica One', sans-serif, monospace;
+}
+
+/*Mdp oublié*/
+.form_forgot_pwd {
+    display: none;
+}
+
+/*#ACC7AC*/
+
+/*titre sur toutes les pages sauf home*/
+#title_page {
+    font-size: 2.5rem;
+    text-align: center;
+    background-image: url(images/books%20original%20-%20copie%20white.jpg);
+    background-size: cover;
+    height: auto;
+    min-height: 70%;
+    color: black;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title_page h2 {
+    margin: 2%;
+}
+
+#title_page h2:nth-child(1) {
+    text-decoration: underline;
+    font-size: 2em;
+}
+
+/*1 chapitre et ecrire un nouveau chap*/
+.global_chapter {
+    background: #ACC7AC;
+    margin: 2%;
+}
+
+/*la où s'affichent tous les chapitres et toutes les infos + la où s'affichent com sous un chapitre*/
+.display_list_chapters {
+    width: 70%;
+    margin: auto;
+    background: white;
+}
+
+
+/*
+/*
+//////////////   FIN COMMUN à plusieurs pages (1/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////  HOME PAGE (2/10)
+/*
+*/
+
+/*
+/*TITLE
+*/
+#title_home {
+    background-image: url(images/backgroud_home.jpg);
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
+.all_txt_home
+
+/*titre + fleche bas*/
+    {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.txt_titre_home
+
+/* juste titre 'BILLET SIMPLE pour l'ALASKA*/
+    {
+    padding: 3%;
+    font-family: 'Amatic SC', sans-serif, monospace;
+    ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        font-size: 4rem;
+}
+
+.em_homeView {
+    font-style: italic;
+    font-size: 2.5rem;
+}
+
+h1 {
+    font-family: 'Montserrat Subrayada', sans-serif, monospace;
+}
+
+/*div fleche bas*/
+.global_down_arrow {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*QUE la fleche bas*/
+.down_arrow {
+    font-size: 1.5rem;
+    padding: 0.5% 1%;
+    margin: 2% 0% 1% 0%;
+    text-decoration: none;
+    border: 2px black solid;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+/*
+/* END TITLE
+*/
+
+
+
+
+
+/*
+/*CONCEPT
+*/
+#concept {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    padding: 2% 15%;
+    border-top: 4em solid #DE7572;
+    border-bottom: 4em solid #DE7572;
+}
+
+.title_concept {
+    font-size: 10vw;
+    margin: 0;
+}
+
+.txt_concept {
+    text-align: justify;
+}
+
+/*
+/* END CONCEPT  
+*/
+
+
+
+/*
+/* 3 derniers chapitres 
+*/
+
+/*englobe titre + apercu des 3 derners chap + bouton lire la suite*/
+#lasts_chapters {
+    display: flex;
+    flex-direction: column;
+}
+
+/* titre 'Les 3 derniers chapitres de mon roman :'*/
+.title_lasts_chapters {
+    margin: 4% 2% 2%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Comprend chaque chapitre et boucle php*/
+.display_lasts_chapters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*chapitre unique*/
+.unique_chapter {
+    margin: 2%;
+    position: relative;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 10px;
+}
+
+/*infos au dessus de l'apercu du chapitre (donc titre, date publi, nb de com)*/
+.infos_chapter {
+    text-align: center;
+    padding: 5% 0%;
+}
+
+.infos_chapter p:nth-child(1) {
+    margin: 0;
+    background: black;
+    color: white;
+    padding: 3%;
+    font-size: 1.2em;
+}
+
+.infos_chapter p:nth-child(2) {
+    margin: 0;
+    padding: 2%;
+    border-bottom: 1px solid black;
+    font-style: italic;
+    font-size: 1em;
+}
+
+/* contenu du chap*/
+.content_chapter {
+    padding: 2%;
+    margin: 2% 5%;
+    text-align: justify;
+}
+
+/* bouton lire la suite*/
+.read_more_lasts_chapters {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    margin: 4%;
+    background: black;
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1%;
+    font-size: 1.2em;
+}
+
+/*bouton voir tous les chap*/
+.see_all_chapters {
+    margin: 0% 2%;
+    padding: 1%;
+    text-align: center;
+    background: black;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+/*
+/* 3 derniers chapitres 
+*/
+
+
+
+
+/*
+/* A propos de l'auteur
+*/
+
+/*comprend txt + img*/
+#aboutJF {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+/*titre a propos de l'auteur*/
+.title_aboutJF {
+    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+/*police pour l'appostrophe*/
+.title_aboutJF em {
+    font-family: sans-serif, monospace;
+}
+
+/*pour taille img etc*/
+.img_and_txt_about_JF {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+.portrait_JF {
+    margin: 0% 5%;
+}
+
+.global_img_JF img {
+    height: auto;
+    width: 100%;
+}
+
+/*txt*/
+.txt_about_JF {
+    margin: 0% 5% 0% 2%;
+    text-align: justify;
+}
+
+
+/*
+/*
+//////////////   END HOMEPAGE (2/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   Page ALL CHAPTERS (3/10)
+/*
+*/
+
+/*Engloble tout sauf header et footer*/
+.list_chapters {
+    padding-top: 2%;
+}
+
+/*Pour 1 chapitre*/
+.one_chapter_only {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin-bottom: 10%;
+}
+
+.one_chapter_only:last-child {
+    border-bottom: 2px solid #ACC7AC;
+}
+
+/*Titre chap*/
+.title_chapter_only {
+    background: #ACC7AC;
+    /*    color: white;*/
+    text-align: center;
+    margin: 0;
+    border-top: 1px solid black;
+    padding: 3% 0% 1% 0%;
+    font-size: 1.4em;
+}
+
+/*infos relatives au chap donc titre author, date publi, nb com...*/
+.infos_compl_chapter_only {
+    text-align: center;
+    border-bottom: 2px solid #ACC7AC;
+    margin: 0;
+    padding: 1%;
+    font-size: 0.9em;
+    font-style: italic
+}
+
+/*apercu du coutenu d'un chap*/
+.content_one_chapter {
+    padding: 2% 3% 0%;
+    text-align: justify;
+}
+
+/*bouton voir la suite*/
+.read_more {
+    margin: 2%;
+    padding: 1%;
+    text-align: center;
+    background: #ACC7AC;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    font-size: 1.2em;
+    /*    color: white;*/
+}
+
+.read_more:hover {
+    box-shadow: none;
+}
+
+/*boutons pour changement de pages*/
+.pages_buttons {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 4%;
+    flex-wrap: wrap;
+    font-size: 1.2em;
+}
+
+.pages_buttons a {
+    color: black;
+}
+
+
+/*
+/*
+//////////////   FIN Page ALL CHAPTERS (3/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   Page pour afficher 1 chapitre (4/10)
+/*
+*/
+
+/*Txt d'un chapitre'*/
+.txt_one_chapter {
+    margin: 0;
+}
+
+/*info txt d'un chapitre*/
+.info_txt_one_chapter {
+    margin: 0;
+    text-align: right;
+    margin-top: 10%;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/*toute la partie com donc poster+affichage*/
+.comments_part {
+    background-image: url(images/Pr%C3%A9sentation2%20-%20copie.jpg);
+}
+
+/*titre partie 'Commentaire'*/
+.title_comments_part {
+    background: #ACC7AC;
+    margin: 2% 0%;
+    padding: 2%;
+    font-size: 1.5em;
+    text-align: center;
+    /*    color: white;*/
+}
+
+/*sous-titre partie Commentaire donc 'laisser un com' et 'les derniers commentaires'*/
+.subtitle_comment {
+    text-align: center;
+    padding-bottom: 0.5%;
+    margin: auto;
+    font-size: 1.2em;
+}
+
+/*trait */
+hr {
+    border: 1px solid #ACC7AC;
+    width: 20%;
+}
+
+/*formulaire pour laisser un com*/
+.form_comment {
+    width: 40%;
+    border: 5px solid #ACC7AC;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius: 10px;
+    background: white;
+}
+
+/*label commentaire + textarea*/
+.form_comment div:nth-child(2) {
+    margin: 5% 0%;
+}
+
+/*boutton valider le formulaire laisser un commentaire*/
+.submit_form_leave_com {
+    width: 90%;
+    font-size: 1em;
+    background: #ACC7AC;
+    font-family: 'Unica One', sans-serif, monospace;
+    border: none;
+    border-radius: 5px;
+}
+
+/*champs du com*/
+#author_com,
+#content_com {
+    border: none;
+    border-bottom: 1px solid #ACC7AC;
+}
+
+#author_com:focus,
+#content_com:focus {
+    background-color: #E5E5E5;
+}
+
+/*1 commntaire*/
+.coms_posted_and_OK {
+    margin-top: 2%;
+}
+
+.coms_posted_and_OK:last-child {
+    margin-bottom: 2%
+}
+
+/*infos sur qui a posté le com*/
+.author_comment_posted {
+    margin: 0;
+    padding: 1% 2%;
+    background: #ACC7AC;
+    /*    color: white;*/
+}
+
+/*infos sur qui a posté le com + bouton signaler*/
+.content_comment_posted {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+    justify-content: space-between;
+    border-bottom: 2px solid #ACC7AC;
+}
+
+.content_comment_posted p,
+.content_comment_posted a {
+    margin: 2% 1%;
+    padding: 1%;
+}
+
+.content_comment_posted p {
+    width: 70%;
+}
+
+.content_comment_posted a {
+    color: white;
+    background: red;
+    border-radius: 5px;
+    max-height: 19;
+}
+
+
+/*Si pas de commentaire*/
+.no_comment {
+    text-align: center;
+}
+
+/*
+/*
+//////////////   FIN Page pour afficher 1 chapitre (4/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   Page ADMIN (5/10)
+/*
+*/
+
+/*Contient bouton pour ecrire un nouveau chapitre + liste chpitres*/
+.content_admin_page {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+/*bouton pour ecrire un nouveau chap*/
+.write_new_chap {
+    margin: auto;
+    width: 70%;
+    background: #ACC7AC;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5%;
+    /*    color: white;*/
+    color: black;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/*Dans la boucle php. Englobe, pour chaque chap : les infos author etc, nb de coms et boutons de gestion*/
+.unique_chapter_admin_page {
+    margin: 2%;
+    border: 15px solid #ACC7AC;
+
+}
+
+/*Que les infos type titre author etc, pour chaque chap*/
+.infos_chapter_admin_page {
+    text-align: center;
+    background: #ACC7AC;
+    margin: 0;
+    /*    color: white;*/
+    padding-bottom: 1%;
+}
+
+.infos_chapter_admin_page p:nth-child(1) {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.infos_chapter_admin_page p:nth-child(2) {
+    font-style: italic;
+    margin: 1%;
+}
+
+/*nombre de com pour chaque chap*/
+.nb_com_per_chap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2%;
+}
+
+.nb_com_per_chap p {
+    padding: 1%;
+    margin: 0;
+    border-bottom: 1px solid #ACC7AC;
+    margin-bottom: 2%;
+}
+
+.nb_coms_ok {
+    color: green;
+    background: none;
+}
+
+.nb_coms_wait {
+    color: darkorange;
+    background: none;
+}
+
+.nb_coms_del {
+    color: red;
+    background: none;
+}
+
+.nb_coms_tot {
+    background: none;
+}
+
+/*action pour chaque chap : gerer, supprimer*/
+.actions_chapitre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 1%;
+}
+
+.actions_chapitre a {
+    padding: 1%;
+    border: none;
+    border-radius: 5px;
+    /*    color: white;*/
+}
+
+/*bouton gerer les com et modifier le chap */
+.actions_chapitre a:nth-child(1),
+.actions_chapitre a:nth-child(2) {
+    background: #ACC7AC;
+    color: black;
+    margin: 2%;
+}
+
+/*bouton sup un com*/
+.actions_chapitre a:nth-child(3) {
+    background: red;
+    color: white;
+    margin: 2%;
+}
+
+.display_chapter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*bouton pour afficher contenu caché*/
+.display_chapter button:nth-child(1) {
+    padding: 1%;
+    border-radius: 5px;
+    background: none;
+    /* color: black; */
+    text-align: center;
+    margin: 2%;
+    width: 90%;
+    border: 2px solid #ACC7AC;
+    font-size: 1em;
+}
+
+/*afficher le contenu du chapitre caché*/
+.display_chapter:hover .content_chapter_admin_page {
+    display: block;
+    margin: 2%;
+}
+
+/*contenu du chapitre caché*/
+.content_chapter_admin_page {
+    text-align: justify;
+    display: none;
+    width: 90%;
+}
+
+
+/*
+/*
+//////////////   FIN Page ADMIN (5/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   Page gestion d'1 chap par l'admin (6/10)
+/*
+*/
+
+/*nb de commentaire de chaque categorie du chapitre*/
+.nb_coms_categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: auto;
+    flex-wrap: wrap
+}
+
+.nb_coms_categories p {
+    padding: 1%;
+    color: white;
+    border-radius: 5px;
+
+}
+
+/*commentaires OK*/
+.nb_coms_categories p:nth-child(1) {
+    background: green;
+}
+
+/*commentaires en attente*/
+.nb_coms_categories p:nth-child(2) {
+    background: darkorange;
+}
+
+/*commentaires SUP*/
+.nb_coms_categories p:nth-child(3) {
+    background: red;
+}
+
+/*tous les comments d'un chap*/
+.all_comments {
+    width: 70%;
+    padding: 0% 3%;
+    margin: auto;
+    border-right: #ACC7AC 5px solid;
+    border-left: #ACC7AC 5px solid;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/*chaque com*/
+.coms_affiches {
+    margin: 0;
+    margin-top: 3%;
+    padding: 0.5% 0%;
+}
+
+/*chaque com OK*/
+.OK {
+    color: green;
+    border-top: 1px solid green;
+}
+
+/*chaque com en attente*/
+.WAIT {
+    color: darkorange;
+    border-top: 1px solid darkorange;
+}
+
+/*chaque com SUP*/
+.DEL {
+    color: red;
+    border-top: 1px solid red;
+}
+
+/*contenu de chaque com (autheur, date + contenu)*/
+.contenu_each_com {
+    margin: 0;
+    background: #E5E5E5;
+    padding: 1%;
+}
+
+.contenu_each_com p:nth-child(1) {
+    margin: 0% 0% 1% 0%;
+    font-weight: bold;
+}
+
+.contenu_each_com p:nth-child(2) {
+    margin: 0;
+}
+
+/*englobe les actions possible quand 1 com est signalé*/
+.action_com_reported {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.action_com_reported a {
+    margin: 1% 0%;
+    padding: 0.5%;
+    border-radius: 5px;
+    color: white;
+}
+
+/*pour revalider et donc afficher un com*/
+.revalider_com {
+    background: darkorange;
+}
+
+/*pour sup un com*/
+.supp_com {
+    background: red;
+}
+
+/*
+/*
+//////////////   FIN Page gestion d'1 chap par l'admin (6/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   Page écriture d'un nouveau chapitre (7/10)
+/*
+*/
+
+/*formulaire*/
+.new_chap {
+    width: 70%;
+    margin: auto;
+    background: white;
+    padding: 2% 3% 0%;
+}
+
+/*n° du chapitre et tire du chapitre*/
+.infos_new_chap {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    margin-bottom: 2%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#chapter_number,
+#title {
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 2%;
+}
+
+/*n° du chapitre et tire du chapitre séparement*/
+.infos_new_chap div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*bouton envoyer*/
+.valider_new_chap {
+    margin: 1% 0%;
+    width: 100%;
+    padding: 1%;
+    background: #ACC7AC;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    font-size: 1.2em;
+    font-family: 'Unica One', sans-serif, monospace;
+    /*    color: white;*/
+}
+
+
+
+
+/*
+/*
+//////////////   FIN Page écriture d'un nouveau chapitre (7/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////  Page modification d'un nouveau chapitre (8/10)
+/*
+*/
+
+/*formulaire*/
+.form_update_and_cancel {
+    width: 70%;
+    margin: auto;
+    background: white;
+    padding: 2% 3% 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cancel_update_chap {
+    width: 100%;
+    padding: 1% 0%;
+    border: 2px solid #ACC7AC;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.2em;
+    font-family: 'Unica One', sans-serif, monospace;
+    text-align: center;
+}
+
+
+
+/*
+/*
+//////////////   FIN Page modification d'un nouveau chapitre (8/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   Page accès refusé (9/10)
+/*
+*/
+
+.acces_denied_body {
+    height: 100vh;
+    background-image: url(images/books-1845614_960_720.jpg);
+    background-size: cover;
+    display: flex;
+    padding: 0% 3%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.acces_denied_body i {
+    font-size: 5em;
+    color: red;
+}
+
+.acces_denied_body p {
+    font-size: 2em;
+    background: linear-gradient(red, orange);
+    padding: 1%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.acces_denied_body a {
+    font-size: 1.2em;
+    color: black;
+    padding: 1%;
+    color: black;
+}
+
+
+
+
+/*
+/*
+//////////////   FIN Page accès refusé (9/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   MENTIONS LEGALES (10/10)
+/*
+*/
+
+.mentions_legales {
+    text-align: center;
+    margin: 2% 5%;
+    padding: 0% 2%;
+}
+
+
+/*
+/*
+//////////////   FIN MENTIONS LEGALES (10/10)
+/*
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+//////////////   RESPONSIVE
+/*
+*/
+
+@media screen and (max-width: 800px) {
+    .display_lasts_chapters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .display_list_chapters {
+        width: 90%;
+
+    }
+
+    .menu_burger {
+        display: block;
+    }
+
+    .menu_classique {
+        display: none;
+    }
+
+    header {
+        justify-content: flex-end;
+    }
+}
+
+
+
+/* seulement pour téléphone*/
+@media screen and (max-width: 570px) {
+    .img_and_txt_about_JF {
+        flex-direction: column;
+    }
+
+    div.lightbox2 figure figcaption {
+        width: 90%;
+    }
+
+    .list_chapters {
+        background: white;
+    }
+
+    .form_comment {
+        width: 90%;
+    }
+
+    .content_comment_posted p {
+        width: 100%;
+    }
+
+    /*chaque com*/
+    .coms_affiches {
+        margin-top: 8%;
+    }
+
+}
